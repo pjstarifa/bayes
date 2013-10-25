@@ -1,0 +1,11 @@
+<div class="span12" ng-controller="BayesCtrl">
+
+<div>The hypothesis is </div>
+    <br>Prior Probability: <input type="text" ng-model="dto.Bayes.x"/>
+    <br>Probability hypothesis is true given the new evidence: <input type="text" ng-model="dto.Bayes.y"/>
+    <br>Probability the hypothesis is false given the new evidence: <input type="text" ng-model="dto.Bayes.z"/>
+    <br>
+    <button type="button" class="btn btn-primary" ng-click="calcPosteriorProbability(dto.Bayes.x, dto.Bayes.y, dto.Bayes.z)">Calculate</button>
+    <br>Posterior Probability: {{dto.Bayes.posterior}}
+
+</div>
