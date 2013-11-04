@@ -1,5 +1,3 @@
-// var myapp = angular.module('myapp', ['firebase']);
-
 angular.module('app', [
     'ui.bootstrap'
     ,'ui'

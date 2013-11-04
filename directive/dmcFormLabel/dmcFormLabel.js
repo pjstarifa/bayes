@@ -18,11 +18,12 @@ angular.module('app').directive('dmcFormInput', function () {
                 elem.before("<span class='placeHolder'>" + placeholderText);
             }
 
-            elem.on('blur', function () {
+            elem.on('keyup blur', function () {
                 if (elem.val() == '') {
                     console.log('No value entered: ');
                     elem.siblings('.placeHolder').removeClass('active');
                 } else {
+                    // TODO: Don't add the class if it is there already
                     elem.siblings('.placeHolder').addClass('active');
                     console.log('Value entered: ' + elem.val());
                 }
@@ -31,6 +32,7 @@ angular.module('app').directive('dmcFormInput', function () {
     };
 });
 
+// Below is the plugin that the directive was derived from
 /*
 (function ($) {
     // Init Plugin Functions

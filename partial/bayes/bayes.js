@@ -1,4 +1,4 @@
-angular.module('app').controller('BayesCtrl', function ($scope, angularFire) {
+angular.module('app').controller('BayesCtrl', function ($scope) {
 
     $scope.dto = {};
     $scope.dto.Bayes={};
@@ -6,11 +6,11 @@ angular.module('app').controller('BayesCtrl', function ($scope, angularFire) {
 
     // TODO: Persist data in local storage and Firebase
     var url = 'https://dmc.firebaseio.com/items';
-    $scope.items = angularFire(url, $scope, 'items');
+   // $scope.items = angularFire(url, $scope, 'items');
 
     var calculatePosteriorProbability = function (x, y, z) {
         if (!isValidData(x, y, z))
-        {throw "Invalid Data. Inputs must all be fractions or percents.";}
+        {throw "Invalid Data. Inputs must all be percents.";}
         var pPrior = convertToFraction(x);
         var pIfTrue = convertToFraction(y);
         var pIfFalse = convertToFraction(z);
